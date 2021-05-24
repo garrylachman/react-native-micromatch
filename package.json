@@ -39,7 +39,7 @@
   "dependencies": {
     "react-native-util": "^1.0.2",
     "braces": "^3.0.1",
-    "picomatch": "https://github.com/silverwind/picomatch/tree/nodeps"
+    "picomatch": "https://github.com/silverwind/picomatch.git#nodeps"
   },
   "devDependencies": {
     "fill-range": "^7.0.1",
