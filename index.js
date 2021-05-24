@@ -3,7 +3,6 @@
 import util from 'react-native-util';
 const braces = require('braces');
 const picomatch = require('picomatch');
-const utils = require('picomatch/lib/utils');
 const isEmptyString = val => val === '' || val === './';
 
 /**
@@ -228,9 +227,6 @@ micromatch.contains = (str, pattern, options) => {
  */
 
 micromatch.matchKeys = (obj, patterns, options) => {
-  if (!utils.isObject(obj)) {
-    throw new TypeError('Expected the first argument to be an object');
-  }
   let keys = micromatch(Object.keys(obj), patterns, options);
   let res = {};
   for (let key of keys) res[key] = obj[key];
@@ -359,9 +355,8 @@ micromatch.all = (str, patterns, options) => {
  */
 
 micromatch.capture = (glob, input, options) => {
-  let posix = utils.isWindows(options);
   let regex = picomatch.makeRe(String(glob), { ...options, capture: true });
-  let match = regex.exec(posix ? utils.toPosixSlashes(input) : input);
+  let match = regex.exec(input);
 
   if (match) {
     return match.slice(1).map(v => v === void 0 ? '' : v);
