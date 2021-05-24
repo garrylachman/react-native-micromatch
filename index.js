@@ -1,6 +1,6 @@
 'use strict';
 
-const util = require('util');
+import util from 'react-native-util';
 const braces = require('braces');
 const picomatch = require('picomatch');
 const utils = require('picomatch/lib/utils');
