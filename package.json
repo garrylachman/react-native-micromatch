@@ -42,7 +42,7 @@
     "picomatch": "https://github.com/silverwind/picomatch.git#nodeps"
   },
   "devDependencies": {
-    "fill-range": "^7.0.1",
+    "fill-range": "https://github.com/garrylachman/fill-range",
     "gulp-format-md": "^2.0.0",
     "minimatch": "^3.0.4",
     "mocha": "^7.2.0",
